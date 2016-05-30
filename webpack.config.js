@@ -18,13 +18,9 @@ module.exports = {
       new ExtractTextPlugin("[name].css")
   ],
   resolve: {
-      extensions:  ["", ".ts", ".js", ".css"]
+      extensions:  ["", ".ts", ".js", ".css", ".ico"]
   },
   module: {
-      preLoaders: [
-        { test: /\.ts$/, loader: "tslint" }
-      ],
-      
       loaders: [
           {
               test: /\.ts$/,
@@ -34,10 +30,6 @@ module.exports = {
           {
               test: /\.css$/,
               loader: ExtractTextPlugin.extract("style-loader", "css-loader")
-          },
-          {
-              test: /\.ico$/,
-              loader: ["file-loader"]
           }
       ]
   }

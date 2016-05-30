@@ -14,5 +14,5 @@ import '@angular/router';
 import '@angular/http';
 
 // RxJS
-import 'rxjs';
+//import 'rxjs';
 import 'ts-helpers';
