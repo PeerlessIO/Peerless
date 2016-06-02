@@ -2,10 +2,13 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'project-header',
+    inputs: ['title', 'instructor'],
     template: `
-    
-    with Patrick Bartenstein
+    {{title}}
+    {{instructor}}
     `
 })
 export class ProjectHeader {
+    title: string;
+    instructor: string;
 }

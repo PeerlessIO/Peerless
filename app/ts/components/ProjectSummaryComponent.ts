@@ -8,9 +8,6 @@ import { Project } from '../models/Project';
     selector: 'project-summary',
     directives: [CORE_DIRECTIVES, ProjectSummaryDetails],
     template: `
-    <div *ngIf="project">
-        {{project.title}}
-    </div>
     <img src="/app/images/project1.png">
     <project-summary-details [project]="project"></project-summary-details>
     `

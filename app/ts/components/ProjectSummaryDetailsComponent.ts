@@ -9,11 +9,13 @@ import { Project } from '../models/Project';
     inputs: ['project'],
     directives: [ProjectHeader, ProjectTimeline, Tags],
     template: `
-    <project-header></project-header>
-    <project-timeline></project-timeline>
-    <tags></tags>
+    <div *ngIf="project">
+        <project-header [title]="project.title" [instructor]="project.instructor"></project-header>
+        <project-timeline></project-timeline>
+        <tags></tags>
+    </div>
     `
 })
 export class ProjectSummaryDetails {
-    project: string;
+    project: Object;
 }
