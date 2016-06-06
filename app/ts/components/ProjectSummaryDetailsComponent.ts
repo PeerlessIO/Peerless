@@ -13,8 +13,7 @@ import { Project } from '../models/Project';
         <project-header [title]="project.title" 
                         [instructor]="project.instructor">
         </project-header>
-        <project-timeline [stateDate]="project.startDate" 
-                          [effort]="project.effort">
+        <project-timeline [startDate]="project.startDate" [effort]="project.effort" [participants]="project.participants">
         </project-timeline>
         <tags></tags>
     </div>

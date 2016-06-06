@@ -1,24 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import moment = require('moment');
 
 @Component({
     selector: 'project-timeline',
-    inputs: ['startDate', 'effort'],
+    inputs: ['startDate', 'effort', 'participants'],
     template: `
     {{effort}} hours of work
     
     {{daysUntilStart}} days until kickoff
     
-    53 peers participating
+    {{participants}} peers participating
     `
 })
-export class ProjectTimeline {
+export class ProjectTimeline implements OnInit {
     startDate: string;
     effort: number;
     daysUntilStart: number;
     
-    constructor() {
+    ngOnInit() {
         let today = moment();
-        this.daysUntilStart = today.diff(moment(this.startDate), "days")
+        this.daysUntilStart = moment(this.startDate).diff(today, "days");  
     }
 }
