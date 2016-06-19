@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import moment = require('moment');
 
 @Component({
@@ -12,7 +12,7 @@ import moment = require('moment');
     {{participants}} peers participating
     `
 })
-export class ProjectTimeline implements OnInit {
+export class ProjectTimeline {
     startDate: string;
     effort: number;
     daysUntilStart: number;

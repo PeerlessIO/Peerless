@@ -10,12 +10,18 @@ import { Project } from '../models/Project';
     directives: [ProjectHeader, ProjectTimeline, Tags],
     template: `
     <div *ngIf="project">
-        <project-header [title]="project.title" 
-                        [instructor]="project.instructor">
+        <project-header 
+            [title]="project.title" 
+            [instructor]="project.instructor">
         </project-header>
-        <project-timeline [startDate]="project.startDate" [effort]="project.effort" [participants]="project.participants">
+        <project-timeline 
+            [startDate]="project.startDate" 
+            [effort]="project.effort" 
+            [participants]="project.participants">
         </project-timeline>
-        <tags></tags>
+        <tags
+            [tags]="project.tags">
+        </tags>
     </div>
     `
 })

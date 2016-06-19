@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CORE_DIRECTIVES } from '@angular/common';
 import { ProjectSummaryDetails } from './ProjectSummaryDetailsComponent';
 import { ProjectService } from '../services/ProjectService';
@@ -12,7 +12,7 @@ import { Project } from '../models/Project';
     <project-summary-details [project]="project"></project-summary-details>
     `
 })
-export class ProjectSummary implements OnInit {
+export class ProjectSummary {
     id: string;
     project: Object;
     
