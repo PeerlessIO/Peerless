@@ -13,22 +13,6 @@ export class ProjectService {
     getProject(id: string): Observable<any> {
         let queryURL: string = `${ProjectService.BASE_URL}/project/${id}`;
         return this.http.request(queryURL).map((res: any) => res.json());
-        /*
-        return this.http.request(queryURL)
-            .map((response: Response) => {
-                return(<any>response.json()).items.map(item => {
-                    return new Project({
-                        _id: item._id,
-                        name: item.name,
-                        instructor: item.instructor,
-                        effort: item.effort,
-                        startDate: item.startDate,
-                        participants: item.participants,
-                        tags: item.tags
-                    })
-                })
-            })
-            */
     }
 }
 
