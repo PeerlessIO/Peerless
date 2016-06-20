@@ -2,7 +2,6 @@ import { Injectable, provide } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
-import { Project } from '../models/Project';
 
 @Injectable()
 export class ProjectService {
