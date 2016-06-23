@@ -16,6 +16,7 @@ import { PROJECT_PROVIDERS } from './services/ProjectService';
 })
 class PeerlessApp {}
 
+// Register providers for DI.
 bootstrap(PeerlessApp, [
     PROJECT_PROVIDERS,
     HTTP_PROVIDERS
