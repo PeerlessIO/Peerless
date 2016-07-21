@@ -15,17 +15,17 @@ import { Project } from '../models/Project';
 export class ProjectSummary {
     id: string;
     project: Object;
-    
+
     constructor(public projectService: ProjectService) {
         this.id = 'd82dd4fe207311e6b67b9e71128cae77';
     }
-    
+
     ngOnInit(): void {
         this.projectService
             .getProject(this.id)
             .subscribe((res: Project) => this.renderProject(res));
     }
-    
+
     renderProject(res: Project): void {
         this.project = res;
     }

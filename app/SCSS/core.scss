@@ -1,0 +1,63 @@
+/* welcome to the styles */
+
+
+
+// Helpers
+
+@mixin no-clicky {
+  -webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+// HELPER CLASS GENERATOR
+// Syntax:	 	Property > Direction > Size
+// Example: 	Margin Bottom Large = .mbl
+
+//a list of all properties you want to create helpers for, and their aliases
+$helper-properties:
+	"margin" "padding",
+	"m" "p";
+
+//a list of all directions you want to create helpers for, and their aliases
+$helper-direction:
+	"" "-top" "-bottom" "-left" "-right",
+	"" "t" "b" "l" "r";
+
+//a list of all heights you want to create helpers for, and their aliases
+//	none	small	medium	large
+$helper-height:
+	"0px"		"5px"	"15px"	"30px",
+	"n" 	"s" 	"m" 	"l";
+
+// subdivides the arrays
+$prop-title: nth($helper-properties, 1);
+$prop-label: nth($helper-properties, 2);
+$dir-title: nth($helper-direction, 1);
+$dir-label: nth($helper-direction, 2);
+$h-title: nth($helper-height, 1);
+$h-label: nth($helper-height, 2);
+
+// iterates through and creates all the helper classes
+@for $p from 1 through length($prop-title){
+	@for $d from 1 through length($dir-title){
+		@for $h from 1 through length($h-title){
+			.#{nth($prop-label, $p)}#{nth($dir-label, $d)}#{nth($h-label, $h)}{
+				#{nth($prop-title, $p)}#{nth($dir-title, $d)}: #{nth($h-title, $h)} !important;
+			}
+		}
+	}
+}
+
+.nm {
+	margin: 0 !important;
+}
+
+// Base Constants
+
+.peerless {
+  color: red;
+}
